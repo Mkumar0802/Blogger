@@ -1,6 +1,6 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef,useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer,toast} from 'react-toastify';
 // import { useDispatch, useSelector } from "react-redux";
 // import { Link, useNavigate } from "react-router-dom";
 // import Loading from "../utilltes/Loading";
@@ -23,23 +23,26 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
 
 
+
+
     try {
       const res = await axios.post(`${URLDevelopment}api/login/login`, {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });
+
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE" })
-      if (error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500)
-        toast.error("Email or Password is Invalid");
-      {
-        setError(error.response.data.message)
-      }
+        if (error.response &&
+                error.response.status >= 400 &&
+                error.response.status <= 500)
+                toast.error("Email or Password is Invalid");
     }
-
+    
+      setError(error.response.data.message)
+  
 
   };
 
@@ -76,10 +79,9 @@ function Login() {
           />
           <br></br>
           <div>Username : guest |<span> Password : Guest@123</span></div>
-
-           {
-               error && <div className="error_msg">{ValidationError}</div>
-           }
+          {error && <ValidationError message={error} />}
+      
+         
           <button className="loginButton" type="submit" disabled={isFetching}>
             Login
           </button>
