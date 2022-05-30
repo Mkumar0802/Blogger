@@ -19,7 +19,10 @@ const Navbar = () => {
     return (
         <div className="bg-blue-800 text-white">
             <div>
-                <h1 className=' p-2 font-radio md:text-5xl animate-flip '>Blogger</h1>
+                <div className=' flex justify-center'>
+                <h1 className=' p-2  font-radio md:text-5xl animate-flip '>Blogger</h1>
+                </div>
+                
                 <div className='flex justify-evenly '>
                     <ul className='flex justify-items-end space-x-8 py-5 animate-fadeInLeft'>
                         <li className="rounded-full px-4 py-2  bg-blue-700  hover:bg-blue-700   flex  text-justify hover:ring-4 ring-white transition ease-in-out duration-100">

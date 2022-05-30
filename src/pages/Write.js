@@ -123,10 +123,13 @@ export default function Write() {
       )}
 
       <form className="writeForm" onSubmit={handleSubmit}>
-        <div className="writeFormGroup ">
+        <div className="writeFormGroup">
+          <div className="pr-5">
           <label htmlFor="fileInput">
             <i className=" writeIcon fas fa-plus  "></i>
           </label>
+          </div>
+         
           <input
             type="file"
             name="image"
@@ -143,7 +146,7 @@ export default function Write() {
             onChange={e => setTitle(e.target.value)}
           />
         </div>
-        <div className="writeFormGroup   px-3.5">
+        <div className="writeFormGroup  px-5 ">
           <textarea
             placeholder="Tell your story..."
             type="text"
@@ -151,7 +154,7 @@ export default function Write() {
             onChange={e => setDesc(e.target.value)}
           ></textarea>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center p-6">
         <button type="submit"  className="bg-teal-700 px-2 py-2 rounded-md text-slate-50">
           Publish
         </button>

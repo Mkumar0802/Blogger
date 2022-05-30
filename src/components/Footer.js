@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='bg-blue-900 '>
+        <div className='bg-blue-900  p-7 '>
             <div className='sm:text-xl   md:text-5xl flex justify-center  '>
                 <div className='space-x-5' >
                     <span className='text-green-600'><ion-icon name="logo-whatsapp"></ion-icon> </span>
