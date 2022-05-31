@@ -78,7 +78,7 @@ function Login() {
             ref={passwordRef}
           />
           <br></br>
-          <div>Username : Admin |<span> Password : Testuser@123</span></div>
+          <div>Username : Admin |<span> Password : User@123</span></div>
           {error && <ValidationError message={error} />}
       
          
