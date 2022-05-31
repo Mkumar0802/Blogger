@@ -6,7 +6,7 @@ const Post = ({ post }) => {
   return (
 
     <>
-      <section className="px-80">
+      <section className="px-72">
 <div class="col-lg-4 col-md-12 mb-6  max-w-sm rounded-sm overflow-hidden   shadow-lg mx-96  m-10 bg-white">
 
   <div class="h-64 bg-cover hover:bg-gray p-1 " >
