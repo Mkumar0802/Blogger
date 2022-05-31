@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState ,useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Context } from "../context/Context";
@@ -17,38 +17,38 @@ function SinglePost() {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [updateMode, setUpdateMode] = useState(false);
-    
-    
+
+
     useEffect(() => {
-      const getPost = async () => {
-        const res = await axios.get(`${URLDevelopment}api/posts/` + path);
-        setPost(res.data);
-        setTitle(res.data.title);
-        setDesc(res.data.desc);
-      };
-      getPost();
+        const getPost = async () => {
+            const res = await axios.get(`${URLDevelopment}api/posts/` + path);
+            setPost(res.data);
+            setTitle(res.data.title);
+            setDesc(res.data.desc);
+        };
+        getPost();
     }, [path]);
-  
+
     const handleDelete = async () => {
-      try {
-        await axios.delete(`${URLDevelopment}api/posts/${post._id}`, {
-          data: { username: user.username },
-        });
-        window.location.replace("/");
-      } catch (err) {}
+        try {
+            await axios.delete(`${URLDevelopment}api/posts/${post._id}`, {
+                data: { username: user.username },
+            });
+            window.location.replace("/");
+        } catch (err) { }
     };
-  
+
     const handleUpdate = async () => {
-      try {
-        await axios.put(`${URLDevelopment}api/posts/${post._id}`, {
-          username: user.username,
-          title : title,
-          desc : desc,
-        });
-        setUpdateMode(false)
-      } catch (err) {}
+        try {
+            await axios.put(`${URLDevelopment}api/posts/${post._id}`, {
+                username: user.username,
+                title: title,
+                desc: desc,
+            });
+            setUpdateMode(false)
+        } catch (err) { }
     };
-  
+
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
@@ -98,7 +98,10 @@ function SinglePost() {
                         onChange={(e) => setDesc(e.target.value)}
                     />
                 ) : (
-                    <p className="singlePostDesc">{desc}</p>
+                    <div className='flex justify-center'>
+                        <p className=" singlePostDesc     w-3/4 whitespace-pre-wrap">{desc}</p>
+                    </div>
+
                 )}
                 {updateMode && (
                     <button className="singlePostButton" onClick={handleUpdate}>

@@ -78,11 +78,11 @@ function Login() {
             ref={passwordRef}
           />
           <br></br>
-          <div>Username : guest |<span> Password : Guest@123</span></div>
+          <div>Username : Admin |<span> Password : Testuser@123</span></div>
           {error && <ValidationError message={error} />}
       
          
-          <button className="loginButton" type="submit" disabled={isFetching}>
+          <button className="loginButton bg-red-600" type="submit" disabled={isFetching}>
             Login
           </button>
         </form>

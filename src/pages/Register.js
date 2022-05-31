@@ -22,7 +22,7 @@ function Register() {
                 password,
             });
         
-            res.data &&   window.location.replace("/login");
+            res.data &&   window.location.replace("/home");
         } catch (error) {
             if (error.response &&
                 error.response.status >= 400 &&
@@ -60,7 +60,7 @@ function Register() {
                  {
                  error && <div className="error_msg">{error}</div>
                   }
-                <button className="registerButton" type="submit">
+                <button className="registerButton bg-blue-900" type="submit">
                     Register
                 </button>
             </form>
