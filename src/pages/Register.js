@@ -22,7 +22,7 @@ function Register() {
                 password,
             });
         
-            res.data &&   window.location.replace("/home");
+            res.data &&   window.location.replace("/");
         } catch (error) {
             if (error.response &&
                 error.response.status >= 400 &&
